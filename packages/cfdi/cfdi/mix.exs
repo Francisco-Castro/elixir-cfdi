@@ -4,16 +4,12 @@ defmodule CFDI.MixProject do
   def project do
     [
       app: :cfdi,
-      version: "4.0.7",
-      build_path: "../../../_build",
-      deps_path: "../../../deps",
-      lockfile: "../../../mix.lock",
+      version: "4.0.8+calmecalli.1",
       elixir: "~> 1.17",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: "Construcción, sellado y timbrado de CFDI",
-      package: package(),
-      releaser: [publish: true]
+      package: package()
     ]
   end
 
@@ -24,13 +20,13 @@ defmodule CFDI.MixProject do
   defp deps do
     [
       {:ex_doc, "~> 0.34", only: :dev, runtime: false},
-      {:sat_certificados, path: "../../sat/certificados"},
-      {:cfdi_xml, path: "../xml"},
-      {:cfdi_transform, path: "../transform"},
-      {:cfdi_complementos, path: "../complementos"},
-      {:sat_catalogos, path: "../../sat/catalogos"},
-      {:sat_xsd, path: "../../sat/xsd"},
-      {:saxon_he, path: "../../clir/saxon_he"},
+      {:sat_certificados, "~> 4.0"},
+      {:cfdi_xml, "~> 4.0"},
+      {:cfdi_transform, "~> 4.0"},
+      {:cfdi_complementos, "~> 4.0"},
+      {:sat_catalogos, "~> 4.0"},
+      {:sat_xsd, "~> 4.0"},
+      {:saxon_he, "~> 12.5"},
       {:xml_builder, "~> 2.1"},
       {:saxy, "~> 1.5"},
       {:jason, "~> 1.4"}
